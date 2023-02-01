@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {View, StyleSheet,Text,TextInput} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Categories from '../components/HomeScreen/Categories';
@@ -6,8 +7,37 @@ import HomeHeadNav from '../components/HomeScreen/HomeHeadNav';
 import OfferSlider from '../components/HomeScreen/OfferSlider';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { colors, veg, nonveg } from '../global/style'
+import firestore from '@react-native-firebase/firestore';
 
 const HomeScreen = () => {
+    useEffect(()=>{
+        const subscriber = firestore()
+        .collection('FoodData')
+        .onSnapshot(documentSnapshot => {
+             console.log(documentSnapshot);
+            //  console.log(documentSnapshot.docs.length);
+            //  console.log(documentSnapshot.docs);
+
+           documentSnapshot.docs.map((doc)=>{
+            //  console.log(doc.id);
+             console.log(doc.data().id);
+            //  setOrder(doc.data().items)
+          });
+        });
+   
+    //    firestore()
+    //    .collection('FoodData')
+    //    .get()
+    //    .then(querySnapshot => {
+    //      console.log('Total users: ', querySnapshot);
+     
+    //      querySnapshot.forEach(documentSnapshot => {
+    //        console.log('User ID: ', documentSnapshot.id, documentSnapshot.data());
+    //      });
+    //    });
+    
+       return () => subscriber();
+     },[])
      return (
           <SafeAreaView>
              <HomeHeadNav/>
