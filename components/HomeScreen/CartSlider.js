@@ -27,7 +27,7 @@ const Cardslider = ({ title, data, navigation }) => {
 
                                 <View style={styles.s2in}>
                                     <Text style={styles.txt2}>Rs.{item.foodPrice}/-</Text>
-                                    {item.foodCategory== 'veg' ? <Text style={veg}></Text> : <Text style={nonveg}></Text>}
+                                    {item.foodType === 'veg' ? <Text style={veg}></Text> : <Text style={nonveg}></Text>}
                                 </View>
 
                             </View>

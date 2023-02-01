@@ -26,8 +26,8 @@ const HomeScreen = () => {
         return () => subscriber();
     }, []);
     useEffect(() => {
-        setVegData(foodData.filter((item) => item.foodCategory == 'veg'))
-        setNonVegData(foodData.filter((item) => item.foodCategory == 'non-veg'))
+        setVegData(foodData.filter((item) => item.foodType === 'veg'))
+        setNonVegData(foodData.filter((item) => item.foodType === 'non-veg'))
     }, [foodData])
     const handleOnClick = ()=>{
         console.log(foodData.length);
