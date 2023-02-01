@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "977374853052",
+    "project_id": "zomato-c34a4",
+    "storage_bucket": "zomato-c34a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977374853052:android:21cc316788ede1d93e5db9",
+        "android_client_info": {
+          "package_name": "com.sastazomato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977374853052-oji190hdci93jp82lagrtoh1h2fss93v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYe49GEU0f3HOCVss5Lyb5kuepuws2700"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977374853052-oji190hdci93jp82lagrtoh1h2fss93v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
