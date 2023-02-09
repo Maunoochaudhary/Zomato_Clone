@@ -3,8 +3,11 @@ import React from 'react'
 import { colors } from '../../global/style';
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 
-const HomeHeadNav = ({ navigation }) => {
+const HomeHeadNav = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Fontisto name="nav-icon-list-a" size={20} color="black" style={styles.myicon} />
@@ -12,7 +15,8 @@ const HomeHeadNav = ({ navigation }) => {
                 <Text style={styles.mytext}>Foodie</Text>
                 <Icon name="fast-food-outline" size={26} color="black" style={styles.myicon} />
             </View>
-            <TouchableOpacity onPress={() => { navigation.navigate('userprofile') }}>
+            <TouchableOpacity onPress={() => {
+                 navigation.navigate('profile') }}>
                 <Icon name="person-circle-outline" size={26} color="black" style={styles.myicon} />
             </TouchableOpacity>
         </View>
@@ -26,12 +30,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         justifyContent: 'space-between',
-        padding: 10,
+        padding:10,
         alignItems: 'center',
         backgroundColor: colors.col1,
         elevation: 20,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
+        // borderBottomLeftRadius: 20,
+        // borderBottomRightRadius: 20,
     },
     containerin: {
         flexDirection: 'row',

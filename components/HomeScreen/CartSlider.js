@@ -1,9 +1,10 @@
 import { FlatList, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors, veg, nonveg } from '../../global/style'
+import { useNavigation } from '@react-navigation/native'
 
-const Cardslider = ({ title, data, navigation }) => {
-    
+const Cardslider = ({ title, data}) => {
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
             <Text style={styles.cardouthead}>
@@ -15,12 +16,13 @@ const Cardslider = ({ title, data, navigation }) => {
                 data={data}
                 renderItem={({ item }) => (
                     <TouchableOpacity key={item.index}
+                    onPress={()=>{navigation.navigate('product',{item:item})}}
                        >
                         <View style={styles.card}>
                             <View style={styles.s1}>
                                 <Image source={{
                                     uri: item.foodImageUrl
-                                }} style={styles.cardimgin} />
+                                }} style={styles.cardimgin} resizeMode='contain' />
                             </View>
                             <View style={styles.s2}>
                                 <Text style={styles.txt1}>{item.foodName}</Text>
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 200,
         borderRadius: 10,
+        
     },
     s2: {
         flexDirection: 'row',

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useEffect} from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, StatusBar } from 'react-native';
 import {View, StyleSheet, Text, TextInput,Button,ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Categories from '../components/HomeScreen/Categories';
@@ -11,7 +11,10 @@ import {colors, veg, nonveg} from '../global/style';
 import firestore from '@react-native-firebase/firestore';
 import Icons from 'react-native-vector-icons/AntDesign'
 import Cardslider from '../components/HomeScreen/CartSlider';
+import Loder from './LogInSignupScreens/Loder';
+import BottomNav from './BottomNav';
 const HomeScreen = () => {
+  const[loding ,setLoding] = useState(true);
   const [foodData, setFoodData] = useState([]);
   const [VegData, setVegData] = useState([]);
     const [NonVegData, setNonVegData] = useState([]);
@@ -28,14 +31,19 @@ const HomeScreen = () => {
     useEffect(() => {
         setVegData(foodData.filter((item) => item.foodType === 'veg'))
         setNonVegData(foodData.filter((item) => item.foodType === 'non-veg'))
+        setLoding(false)
     }, [foodData])
     const handleOnClick = ()=>{
         console.log(foodData.length);
     }
   return (
-    <SafeAreaView >
+    <>
+    <StatusBar backgroundColor='white' barStyle='dark-content'/>
+    <SafeAreaView style={{flex:1}}>
+
       <HomeHeadNav />
-      <ScrollView style={{marginBottom:50}}>
+      <BottomNav/>
+      {loding ? <Loder /> :<ScrollView style={{marginBottom:50}}>
       <View style={styles.searchbox}>
         <Icon
           name="search-outline"
@@ -64,8 +72,11 @@ const HomeScreen = () => {
       <Cardslider title={"Today's Special"} data={foodData}  />
                 <Cardslider title={"Non-Veg"} data={NonVegData} />
                 <Cardslider title={"Veg"} data={VegData}  />
-                </ScrollView>
+                </ScrollView> }
+           
+      
     </SafeAreaView>
+    </>
   );
 };
 
