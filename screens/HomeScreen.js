@@ -7,7 +7,7 @@ import Categories from '../components/HomeScreen/Categories';
 import HomeHeadNav from '../components/HomeScreen/HomeHeadNav';
 import OfferSlider from '../components/HomeScreen/OfferSlider';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {colors, veg, nonveg} from '../global/style';
+import {colors, veg, nonveg} from '../components/HomeScreen/global/style';
 import firestore from '@react-native-firebase/firestore';
 import Icons from 'react-native-vector-icons/AntDesign'
 import Cardslider from '../components/HomeScreen/CartSlider';

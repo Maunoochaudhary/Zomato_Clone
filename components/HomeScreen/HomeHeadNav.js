@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { colors } from '../../global/style';
+import { colors } from '../HomeScreen/global/style';
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';

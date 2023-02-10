@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { colors, veg, nonveg } from '../../global/style'
+import { colors, veg, nonveg } from '../HomeScreen/global/style'
 import { useNavigation } from '@react-navigation/native'
 
 const Cardslider = ({ title, data}) => {

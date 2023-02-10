@@ -87,8 +87,8 @@ const Track = ({ navigation }) => {
                                                         <Text style={styles.totalprice}>₹{parseInt(item.Foodquantity) * parseInt(item.data.foodPrice)}</Text>
                                                     </View>
                                                 </View>
-
-                                                <View style={styles.row}>
+                                                  
+                                              {item.Addonquantity !=0 && <View style={styles.row}>
                                                     <View style={styles.left}>
                                                         <Text style={styles.qty}>{item.Addonquantity}</Text>
                                                         <Text style={styles.title}>{item.data.foodAddon}</Text>
@@ -97,7 +97,7 @@ const Track = ({ navigation }) => {
                                                     <View style={styles.right}>
                                                         <Text style={styles.totalprice}>₹{parseInt(item.Addonquantity) * parseInt(item.data.foodAddonPrice)}</Text>
                                                     </View>
-                                                </View>
+                                                </View>}
                                             </View>
                                         )
                                     }

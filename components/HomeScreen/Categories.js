@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
-import { colors } from '../../global/style'
+import { colors } from '../HomeScreen/global/style'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 
